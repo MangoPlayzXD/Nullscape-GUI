@@ -146,7 +146,7 @@ local connections = {}
 
 local clientenemies = {
     "Kolona",
-    "Voidbreaker",
+    "breaker",
     "Skinwalker",
     "Operator",
     "Scrapmaw"
@@ -164,7 +164,7 @@ local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 local Window = Rayfield:CreateWindow({
    Name = "Hackscape",
    LoadingTitle = "Loading Hackscape",
-   LoadingSubtitle = "by VoidboundCharger",
+   LoadingSubtitle = "by boundCharger",
    ShowText = "Rahhhh!",
 
    ToggleUIKeybind = "K",
@@ -896,7 +896,7 @@ local function disableEnemy(enemyName, willDestroy, willBreakAI, failNotif)
         Sigil = function(name) return destroyEnemy(name) end,
         Kolona = function(name) return destroyEnemy(name) end,
         Operator = function(name) return destroyEnemy(name) end,
-        Voidbreaker = function(name) return destroyEnemy(name) end,
+        breaker = function(name) return destroyEnemy(name) end,
         Scrapmaw = function(name) return destroyEnemy(name) end
     }
 
@@ -1363,18 +1363,18 @@ local function addOperatorToRound(int)
         int:Destroy()
     end)
 end
-local function addVoidbreakerToRound(int)
-    local v = enemiesFolder.Enemies.Voidbreaker:Clone()
+local function addbreakerToRound(int)
+    local v = enemiesFolder.Enemies.breaker:Clone()
     v.Parent = enemies
-    v.Voidbreaker_AI.Enabled = true
-    newInstances["voidbreaker"] = v
+    v.breaker_AI.Enabled = true
+    newInstances["breaker"] = v
 
-    connections["voidbreaker"] = ReplicatedStorage.InRound.Changed:Once(function(bool)
-        newInstances["voidbreaker"] = nil
+    connections["breaker"] = ReplicatedStorage.InRound.Changed:Once(function(bool)
+        newInstances["breaker"] = nil
         v:Destroy()
-        connections["voidbreaker"] = nil
+        connections["breaker"] = nil
 
-        newInstances["voidbreakerVal"] = nil
+        newInstances["breakerVal"] = nil
         int:Destroy()
     end)
 end
@@ -1480,32 +1480,32 @@ enemyTab:CreateButton({
     end
 })
 enemyTab:CreateButton({
-    Name = "Add Voidbreaker This Round or Next Round",
+    Name = "Add breaker This Round or Next Round",
     Callback = function()
-        if not enemiesFolder.ActiveEnemies:FindFirstChild("Voidbreaker") then
+        if not enemiesFolder.ActiveEnemies:FindFirstChild("breaker") then
             local int = Instance.new("IntValue")
-            int.Name = "Voidbreaker"
+            int.Name = "breaker"
             int.Value = 1
             int.Parent = enemiesFolder.ActiveEnemies
-            newInstances["voidbreakerVal"] = int
+            newInstances["breakerVal"] = int
 
             if ReplicatedStorage.InRound.Value then
-                addVoidbreakerToRound(int)
+                addbreakerToRound(int)
 
-                events.NotifyBindable:Fire("<font color=\"#ff0000\">WHY</font>", string.format("Voidbreaker has been <font color=\"#ff0000\">added</font>."))
+                events.NotifyBindable:Fire("<font color=\"#ff0000\">WHY</font>", string.format("breaker has been <font color=\"#ff0000\">added</font>."))
             else
                 local v = ReplicatedStorage.InRound.Changed:Once(function(bool)
                     task.wait(.1)
 
-                    addVoidbreakerToRound(int)
+                    addbreakerToRound(int)
                 end)
-                connections["voidbreaker"] = v
+                connections["breaker"] = v
 
-                events.NotifyBindable:Fire("<font color=\"#ff0000\">WHY</font>", string.format("Voidbreaker has been <font color=\"#ff0000\">added next round</font>."))
+                events.NotifyBindable:Fire("<font color=\"#ff0000\">WHY</font>", string.format("breaker has been <font color=\"#ff0000\">added next round</font>."))
             end
         else
             if notifOn then
-                notif("Voidbreaker is already here or destroyed.", "erm.")
+                notif("breaker is already here or destroyed.", "erm.")
             end
         end
     end
@@ -1585,7 +1585,7 @@ auto_destroy.nilMirage = true
 auto_destroy.Telefragger = true
 auto_destroy.Sigil = true
 auto_destroy.ShadowBaby = true
-auto_destroy.Voidbreaker = true
+auto_destroy.breaker = true
 auto_destroy.Cadence = true
 auto_destroy.Scrapmaw = true
 auto_destroy.RealityBreak = true
@@ -2026,15 +2026,15 @@ enemyTab:CreateToggle({
     end
 })
 
-enemyTab:CreateSection("Voidbreaker")
+enemyTab:CreateSection("breaker")
 enemyTab:CreateToggle({
     Name = "Auto Destroy",
-    CurrentValue = auto_destroy.Voidbreaker,
+    CurrentValue = auto_destroy.breaker,
     Callback = function(v)
-        auto_destroy.Voidbreaker = v
-        local Voidbreaker = enemies:FindFirstChild("Voidbreaker") 
-        if Voidbreaker then
-            handleEnemy(Voidbreaker)
+        auto_destroy.breaker = v
+        local breaker = enemies:FindFirstChild("breaker") 
+        if breaker then
+            handleEnemy(breaker)
         end
     end
 })
@@ -2074,7 +2074,7 @@ enemyTab:CreateToggle({
     end
 })
 
-enemyTab:CreateSection("Voidbound Baby")
+enemyTab:CreateSection("bound Baby")
 enemyTab:CreateToggle({
     Name = "Auto Disable",
     CurrentValue = auto_disable.ShadowBaby,
@@ -2109,7 +2109,7 @@ enemyTab:CreateToggle({
     end
 })
 
-enemyTab:CreateSection("Voidbound Guardian")
+enemyTab:CreateSection("bound Guardian")
 enemyTab:CreateLabel("Cannot be disabled.")
 
 enemyTab:CreateSection("Scrapmaw")
@@ -2163,7 +2163,7 @@ local avt = mapTab:CreateToggle({
     Name = "Anti Void",
     CurrentValue = av,
     Callback = function(Value)
-        av = Value
+        true = Value
     end
 })
 local avs = mapTab:CreateDropdown({
