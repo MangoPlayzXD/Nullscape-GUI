@@ -3737,6 +3737,39 @@ UserInputService.InputBegan:Connect(function(input, gameProcessed)
 		-- game.ReplicatedStorage.MyRemoteEvent:FireServer()
 	end
 end)
+UserInputService.InputBegan:Connect(function(input, gameProcessed)
+	if gameProcessed then return end
+
+	if input.UserInputType == Enum.UserInputType.Gamepad1
+		and input.KeyCode == Enum.KeyCode.ButtonB then
+
+		print("B button pressed!")
+		addUpgrade("MatrixTetrahedron", "Current:0")
+		addUpgrade("Adrenaline", "Current:24")
+		addUpgrade("HighlightGifts", "Current:0")
+		addUpgrade("GraceWings", "Current:0")
+		-- Put your code here
+		-- Example:
+		-- game.ReplicatedStorage.MyRemoteEvent:FireServer()
+	end
+end)
+UserInputService.InputBegan:Connect(function(input, gameProcessed)
+	if gameProcessed then return end
+
+	if input.UserInputType == Enum.UserInputType.Gamepad1
+		and input.KeyCode == Enum.KeyCode.ButtonB then
+
+		print("B button pressed!")
+		addUpgrade("Adrenaline", "Current:24")
+		addUpgrade("HighlightGifts", "Current:0")
+		addUpgrade("GraceWings", "Current:0")
+		-- Put your code here
+		-- Example:
+		-- game.ReplicatedStorage.MyRemoteEvent:FireServer()
+	end
+end)
+
+
 
 
 
