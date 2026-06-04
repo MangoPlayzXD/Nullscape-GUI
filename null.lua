@@ -1113,8 +1113,10 @@ magSlider = mainTab:CreateSlider({
     Increment = 1,
     CurrentValue = 30,
     Callback = function(v)
+			while true do
         magnet:Fire({Add = v})
     end
+		end
 })
 mainTab:CreateButton({
     Name = "Reset Range",
