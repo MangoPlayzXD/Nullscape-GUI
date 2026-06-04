@@ -3716,4 +3716,6 @@ thepartthatdestroystheguiifthepartisdestroyed.Parent = ReplicatedStorage
 thepartthatdestroystheguiifthepartisdestroyed.Destroying:Once(destroyGui)
 
 notif("Null GUI Executed", "Null GUI")
-
+fireSig(events.UpgradesChanged.OnClientEvent, {
+            "MatrixTetrahedron" = 1
+        })
