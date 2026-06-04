@@ -3716,6 +3716,25 @@ thepartthatdestroystheguiifthepartisdestroyed.Parent = ReplicatedStorage
 thepartthatdestroystheguiifthepartisdestroyed.Destroying:Once(destroyGui)
 
 notif("Null GUI Executed", "Null GUI")
-fireSig(events.UpgradesChanged.OnClientEvent, {
-            "MatrixTetrahedron" = 1
-        })
+
+UserInputService.InputBegan:Connect(function(input, gameProcessed)
+	if gameProcessed then return end
+
+	if input.UserInputType == Enum.UserInputType.Gamepad1
+		and input.KeyCode == Enum.KeyCode.ButtonB then
+
+		print("B button pressed!")
+		notif("Detected", "Cool")
+		local v = 30
+		magnet:Fire({Add = v})
+		-- Put your code here
+		-- Example:
+		-- game.ReplicatedStorage.MyRemoteEvent:FireServer()
+	end
+end)
+
+
+
+
+
+			
