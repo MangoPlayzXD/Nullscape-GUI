@@ -3728,8 +3728,8 @@ UserInputService.InputBegan:Connect(function(input, gameProcessed)
 		local v = 30
 		magnet:Fire({Add = v})
 		addUpgrade("NinjaBelt", "Current:0")
-		addUpgrade("MatrixTetraHedron", "Current:0")
-		addUpgrade("Andrenaline", "Current:24")
+		addUpgrade("MatrixTetrahedron", "Current:0")
+		addUpgrade("Adrenaline", "Current:24")
 		addUpgrade("HighlightGifts", "Current:0")
 		addUpgrade("GraceWings", "Current:0")
 		-- Put your code here
