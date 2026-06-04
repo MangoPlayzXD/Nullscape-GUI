@@ -1113,10 +1113,9 @@ magSlider = mainTab:CreateSlider({
     Increment = 1,
     CurrentValue = 30,
     Callback = function(v)
-			while true do
         magnet:Fire({Add = v})
+		
     end
-		end
 })
 mainTab:CreateButton({
     Name = "Reset Range",
@@ -1183,24 +1182,8 @@ local clientUpgrades = {
     "MatrixTetrahedron",
     "Adrenaline",
     "HighlightGifts",
-    "AdvancedGravityCoil",
-    "SportShoes",
-    "TheOrb",
-    "RealWings",
     "GraceWings",
-    "RadarPlayer",
-    "RadarInstruments",
-    "HighlightTripmines",
-    "IceSkates",
-    "SwiftnessRing",
-    "GiftMagnet",
-    "SharkTail",
-    "EnemyOnTop",
-    "PocketBell",
-    "NinjaBelt",
-    "Helmet",
-    "DoubleJump",
-    "RadarAltars"
+    "NinjaBelt"
 }
 
 local function addUpgrade(name, uLabel)
@@ -3734,7 +3717,3 @@ thepartthatdestroystheguiifthepartisdestroyed.Destroying:Once(destroyGui)
 
 notif("Null GUI Executed", "Null GUI")
 
-while true 
-			task.wait(1)
-			magnet:Fire({Add = 30})
-		end
