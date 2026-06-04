@@ -2163,7 +2163,7 @@ local avt = mapTab:CreateToggle({
     Name = "Anti Void",
     CurrentValue = av,
     Callback = function(Value)
-        true = Value
+        av = true
     end
 })
 local avs = mapTab:CreateDropdown({
