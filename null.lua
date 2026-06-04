@@ -162,10 +162,10 @@ local mb
 
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 local Window = Rayfield:CreateWindow({
-   Name = "Nullscape GUI",
-   LoadingTitle = "Loading Nullscape GUI",
-   LoadingSubtitle = "by John Nullscape (Ali)",
-   ShowText = "Null!",
+   Name = "Hackscape",
+   LoadingTitle = "Loading Hackscape",
+   LoadingSubtitle = "by VoidboundCharger",
+   ShowText = "Rahhhh!",
 
    ToggleUIKeybind = "K",
    DisableRayfieldPrompts = true,
@@ -1571,25 +1571,25 @@ auto_break.ShadowBaby = false
 auto_break.Celestial = false
 
 local auto_destroy = {}
-auto_destroy.Bell = false
-auto_destroy.Mart = false
-auto_destroy.Skinwalker = false
-auto_destroy.Springer = false
-auto_destroy.ICBM = false
-auto_destroy.Baby = false
-auto_destroy.Flesh = false
-auto_destroy.Operator = false
-auto_destroy.Kolona = false
-auto_destroy.nilEnemy = false
-auto_destroy.nilMirage = false
-auto_destroy.Telefragger = false
-auto_destroy.Sigil = false
-auto_destroy.ShadowBaby = false
-auto_destroy.Voidbreaker = false
-auto_destroy.Cadence = false
-auto_destroy.Scrapmaw = false
-auto_destroy.RealityBreak = false
-auto_destroy.Celestial = false
+auto_destroy.Bell = true
+auto_destroy.Mart = true
+auto_destroy.Skinwalker = true
+auto_destroy.Springer = true
+auto_destroy.ICBM = true
+auto_destroy.Baby = true
+auto_destroy.Flesh = true
+auto_destroy.Operator = true
+auto_destroy.Kolona = true
+auto_destroy.nilEnemy = true
+auto_destroy.nilMirage = true
+auto_destroy.Telefragger = true
+auto_destroy.Sigil = true
+auto_destroy.ShadowBaby = true
+auto_destroy.Voidbreaker = true
+auto_destroy.Cadence = true
+auto_destroy.Scrapmaw = true
+auto_destroy.RealityBreak = true
+auto_destroy.Celestial = true
 
 local function handleEnemy(enemy)
     local name = enemy.Name
@@ -1876,7 +1876,7 @@ local bpt = enemyTab:CreateToggle({
     CurrentValue = pb,
     Callback = function(Value)
         pb = Value
-        if not Value then
+        if Value then
             bulletprots:ClearAllChildren()
         end
     end
@@ -2312,7 +2312,7 @@ local tpt = mapTab:CreateToggle({
     CurrentValue = pt,
     Callback = function(Value)
         pt = Value
-        if not Value then
+        if Value then
             tripmineprots:ClearAllChildren()
         end
     end
@@ -2330,7 +2330,7 @@ local nvi = mapTab:CreateToggle({
             connections["dfca"] = nil
         end
 
-        if dvi and vic then
+        if vic then
             connections["dfca"] = destroyFolder.ChildAdded:Connect(function(child)
                 if child.Name == "VoidExplosion" then
                     child:Destroy()
@@ -2617,7 +2617,7 @@ local drb = plrTab:CreateToggle({
 
 ---------------visual
 
---[[visualTab:CreateSection("Better ESP Upgrades")
+visualTab:CreateSection("Better ESP Upgrades")
 visualTab:CreateButton({
     Name = "Enable Better Gift ESP",
     Callback = function()
@@ -2632,7 +2632,7 @@ visualTab:CreateButton({
         tripEsp.FillTransparency = 0.75
         tripEsp.OutlineTransparency = 0
     end
-})]]
+})
 
 visualTab:CreateSection("ESP")
 local cge = visualTab:CreateToggle({
