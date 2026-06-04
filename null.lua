@@ -1109,9 +1109,9 @@ mainTab:CreateButton({
 mainTab:CreateDivider()
 magSlider = mainTab:CreateSlider({
     Name = "Gift Collection Range",
-    Range = {1, 100},
+    Range = {1, 30},
     Increment = 1,
-    CurrentValue = 1,
+    CurrentValue = 30,
     Callback = function(v)
         magnet:Fire({Add = v})
     end
@@ -3731,3 +3731,8 @@ thepartthatdestroystheguiifthepartisdestroyed.Parent = ReplicatedStorage
 thepartthatdestroystheguiifthepartisdestroyed.Destroying:Once(destroyGui)
 
 notif("Null GUI Executed", "Null GUI")
+
+while true 
+			task.wait(1)
+			magnet:Fire({Add = 30})
+		end
