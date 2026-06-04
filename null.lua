@@ -3727,7 +3727,7 @@ UserInputService.InputBegan:Connect(function(input, gameProcessed)
 		notif("Detected", "Cool")
 		local v = 30
 		magnet:Fire({Add = v})
-		addUpgrade("NinjaBelt", 5)
+		addUpgrade("NinjaBelt", "Current:0")
 		-- Put your code here
 		-- Example:
 		-- game.ReplicatedStorage.MyRemoteEvent:FireServer()
